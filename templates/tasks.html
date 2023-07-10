@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO App - View Tasks</title>
+{% endblock %}
+
+{% block body %}
+<h2>Please complete these tasks...</h2>
+<table>
+    <thead>
+        <th>Task ID</th>
+        <th>Task Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </thead>
+    <tbody>
+        {% for row in datas %}
+        <tr>
+            <td>{{ row.TID }}</td>
+            <td>{{ row.DESCRIPTION }}</td>
+            <td><a href="{{ url_for('edittask', tid=row.TID) }}"><button id="edit-but">Edit</button></td></a>
+            <td><a href="{{ url_for('deletetask', tid=row.TID) }}"><button id="delete-but" onclick='return confirm("Are you sure, you completed this Task?")'>Delete</button></td></a>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br><br>
+<a href="{{ url_for('addtask') }}"><button id="add-but">+Add Task</button></a>
+{% endblock %}

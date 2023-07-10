@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO App</title>
+{% endblock %}
+
+{% block body %}
+<h2>Welcome to TODO App</h2>
+<h3>Click the button below to check your tasks...</h3>
+<a href="{{ url_for('tasks') }}"><button id="check-but">View my Tasks</button></a>
+{% endblock %}

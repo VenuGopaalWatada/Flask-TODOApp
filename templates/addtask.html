@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>TODO App - Add Task</title>
+{% endblock %}
+
+{% block body %}
+<h2>Add Task</h2><hr>
+<form method='post' action='{{ url_for("addtask") }}'>
+    <label>Mention your Task: </label>
+    <input type='text' name='description' required>
+    <br>
+    <br>
+    <input type='submit' value='Add' id='add-sub'>
+</form>
+{% endblock %}
